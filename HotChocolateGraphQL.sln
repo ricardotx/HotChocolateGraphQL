@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateGraphQL.Api", "HotChocolateGraphQL.Api\HotChocolateGraphQL.Api.csproj", "{8AA8A556-2AC0-4628-8762-E2B71E26B702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateGraphQL.Data", "HotChocolateGraphQL.Data\HotChocolateGraphQL.Data.csproj", "{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AA8A556-2AC0-4628-8762-E2B71E26B702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA8A556-2AC0-4628-8762-E2B71E26B702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA8A556-2AC0-4628-8762-E2B71E26B702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA8A556-2AC0-4628-8762-E2B71E26B702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C73C0599-8217-495C-AFEA-D83142EF605D}
+	EndGlobalSection
+EndGlobal

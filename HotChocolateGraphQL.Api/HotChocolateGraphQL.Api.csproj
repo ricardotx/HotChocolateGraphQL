@@ -16,13 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HotChocolateGraphQL.Data\HotChocolateGraphQL.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="GraphQL\Mutations\" />
-    <Folder Include="GraphQL\Types\" />
-    <Folder Include="GraphQL\Schema\" />
-    <Folder Include="GraphQL\Resolvers\" />
+    <ProjectReference Include="..\HotChocolateGraphQL.Services\HotChocolateGraphQL.Services.csproj" />
   </ItemGroup>
 
 </Project>

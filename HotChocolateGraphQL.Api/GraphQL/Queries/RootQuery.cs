@@ -1,16 +1,20 @@
 using HotChocolate;
 
-using HotChocolateGraphQL.Data.Context;
+using HotChocolateGraphQL.Api.GraphQL.Resolvers.Contracts;
 using HotChocolateGraphQL.Data.Models;
 
-using System.Linq;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace HotChocolateGraphQL.Api.GraphQL.Queries
 {
 	public class RootQuery
 	{
-		public IQueryable<Account> GetAccounts([Service] ApplicationContext context) => context.Accounts;
+		public async Task<IEnumerable<Account>> Accounts([Service] IAccountResolver resolver) => await resolver.AccountsAsync();
 
-		public IQueryable<Owner> GetOwners([Service] ApplicationContext context) => context.Owners;
+		public async Task<Owner> Owner(Guid ownerId, [Service] IOwnerResolver resolver) => await resolver.OwnerAsync(ownerId);
+
+		public async Task<IEnumerable<Owner>> Owners([Service] IOwnerResolver resolver) => await resolver.OwnersAsync();
 	}
 }

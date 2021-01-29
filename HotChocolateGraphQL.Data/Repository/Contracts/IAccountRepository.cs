@@ -1,4 +1,4 @@
-﻿using HotChocolateGraphQL.Data.Models;
+using HotChocolateGraphQL.Data.Models;
 
 using System;
 using System.Collections.Generic;
@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace HotChocolateGraphQL.Data.Repository.Contracts
 {
-    public interface IAccountRepository
-    {
-        Account CreateAccount(Account account);
+	public interface IAccountRepository
+	{
+		Task<Account> CreateAsync(Account account);
 
-        Task<ILookup<Guid, Account>> DataLoaderAccountsByOwnerIdsAsync(IEnumerable<Guid> ownerIds);
+		Task<ILookup<Guid, Account>> DataLoaderAccountsByOwnerIdsAsync(IEnumerable<Guid> ownerIds);
 
-        void DeleteAccount(Account account);
+		void DeleteAccount(Account account);
 
-        IEnumerable<Account> GetAll();
+		Task<IEnumerable<Account>> GetAllAsync();
 
-        IEnumerable<Account> GetAllAccountsPerOwner(Guid ownerId);
+		Task<IEnumerable<Account>> GetAllPerOwnerAsync(Guid ownerId);
 
-        Account GetById(Guid id);
+		Task<Account> GetByIdAsync(Guid id);
 
-        Account UpdateAccount(Account dbAccount, Account account);
-    }
+		Task<Account> UpdateAsync(Account dbAccount, Account account);
+	}
 }

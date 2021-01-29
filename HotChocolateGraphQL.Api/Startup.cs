@@ -1,7 +1,12 @@
+using HotChocolateGraphQL.Api.GraphQL.Mutations;
 using HotChocolateGraphQL.Api.GraphQL.Queries;
+using HotChocolateGraphQL.Api.GraphQL.Resolvers;
+using HotChocolateGraphQL.Api.GraphQL.Resolvers.Contracts;
 using HotChocolateGraphQL.Data.Context;
 using HotChocolateGraphQL.Data.Repository;
 using HotChocolateGraphQL.Data.Repository.Contracts;
+using HotChocolateGraphQL.Services;
+using HotChocolateGraphQL.Services.Contracts;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -61,14 +66,19 @@ namespace HotChocolateGraphQL.Api
 			services.AddScoped<IOwnerRepository, OwnerRepository>();
 			services.AddScoped<IAccountRepository, AccountRepository>();
 
+			// Services
+			services.AddScoped<IOwnerService, OwnerService>();
+			services.AddScoped<IAccountService, AccountService>();
+
 			// GraphQL Resolvers
-			//services.AddScoped<IOwnerResolver, OwnerResolver>();
-			//services.AddScoped<IAccountResolver, AccountResolver>();
+			services.AddScoped<IOwnerResolver, OwnerResolver>();
+			services.AddScoped<IAccountResolver, AccountResolver>();
 
 			// GraphQL config
 			services
 				.AddGraphQLServer()
-				.AddQueryType<RootQuery>();
+				.AddQueryType<RootQuery>()
+				.AddMutationType<RootMutation>();
 
 			services.AddControllers();
 			services.AddSwaggerGen(c =>

@@ -3,9 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateGraphQL.Api", "HotChocolateGraphQL.Api\HotChocolateGraphQL.Api.csproj", "{8AA8A556-2AC0-4628-8762-E2B71E26B702}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolateGraphQL.Api", "HotChocolateGraphQL.Api\HotChocolateGraphQL.Api.csproj", "{8AA8A556-2AC0-4628-8762-E2B71E26B702}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateGraphQL.Data", "HotChocolateGraphQL.Data\HotChocolateGraphQL.Data.csproj", "{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolateGraphQL.Data", "HotChocolateGraphQL.Data\HotChocolateGraphQL.Data.csproj", "{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CE96B088-EA9D-485D-8946-BC82E4DF97ED}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateGraphQL.Services", "HotChocolateGraphQL.Services\HotChocolateGraphQL.Services.csproj", "{CB024E43-2AC4-44F3-B6E6-B09C73D02172}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +30,10 @@ Global
 		{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80D90ABD-8A60-49AC-976F-72FCBF7A0F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB024E43-2AC4-44F3-B6E6-B09C73D02172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB024E43-2AC4-44F3-B6E6-B09C73D02172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB024E43-2AC4-44F3-B6E6-B09C73D02172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB024E43-2AC4-44F3-B6E6-B09C73D02172}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

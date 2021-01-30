@@ -9,10 +9,6 @@ namespace HotChocolateGraphQL.Api.GraphQL.Resolvers.Contracts
 {
 	public interface IOwnerResolver
 	{
-		//IDataLoaderResult<IEnumerable<Account>> DataLoaderAccounts(IResolveFieldContext<Owner> context, IDataLoaderContextAccessor dataLoader);
-
-		//Owner QueryOwner(IResolveFieldContext context);
-
 		Task<Owner> OwnerAsync(Guid ownerId);
 
 		Task<Owner> OwnerCreateAsync(OwnerInput data);

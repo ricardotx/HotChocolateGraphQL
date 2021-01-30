@@ -1,5 +1,4 @@
-using HotChocolateGraphQL.Api.GraphQL.Mutations;
-using HotChocolateGraphQL.Api.GraphQL.Queries;
+using HotChocolateGraphQL.Api.GraphQL;
 using HotChocolateGraphQL.Api.GraphQL.Resolvers;
 using HotChocolateGraphQL.Api.GraphQL.Resolvers.Contracts;
 using HotChocolateGraphQL.Data.Context;
@@ -77,8 +76,8 @@ namespace HotChocolateGraphQL.Api
 			// GraphQL config
 			services
 				.AddGraphQLServer()
-				.AddQueryType<RootQuery>()
-				.AddMutationType<RootMutation>();
+				.AddQueryType<Query>()
+				.AddMutationType<Mutation>();
 
 			services.AddControllers();
 			services.AddSwaggerGen(c =>

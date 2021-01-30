@@ -7,10 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HotChocolateGraphQL.Api.GraphQL.Queries
+namespace HotChocolateGraphQL.Api.GraphQL
 {
-	public class RootQuery
+	public class Query
 	{
+		public async Task<Account> Account(Guid accountId, [Service] IAccountResolver resolver) => await resolver.AccountAsync(accountId);
+
 		public async Task<IEnumerable<Account>> Accounts([Service] IAccountResolver resolver) => await resolver.AccountsAsync();
 
 		public async Task<Owner> Owner(Guid ownerId, [Service] IOwnerResolver resolver) => await resolver.OwnerAsync(ownerId);

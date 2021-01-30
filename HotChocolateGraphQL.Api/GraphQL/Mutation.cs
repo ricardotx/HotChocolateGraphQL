@@ -7,10 +7,19 @@ using HotChocolateGraphQL.Data.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace HotChocolateGraphQL.Api.GraphQL.Mutations
+namespace HotChocolateGraphQL.Api.GraphQL
 {
-	public class RootMutation
+	public class Mutation
 	{
+		public async Task<Account> AccountCreate(AccountInput data, [Service] IAccountResolver resolver)
+			=> await resolver.AccountCreateAsync(data);
+
+		public async Task<string> AccountDelete(Guid accountId, [Service] IAccountResolver resolver)
+			=> await resolver.AccountDeleteAsync(accountId);
+
+		public async Task<Account> AccountUpdate(AccountInput data, Guid accountId, [Service] IAccountResolver resolver)
+			=> await resolver.AccountUpdateAsync(accountId, data);
+
 		public async Task<Owner> OwnerCreate(OwnerInput data, [Service] IOwnerResolver resolver)
 			=> await resolver.OwnerCreateAsync(data);
 

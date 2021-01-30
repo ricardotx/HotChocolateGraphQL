@@ -13,7 +13,7 @@ namespace HotChocolateGraphQL.Data.Repository.Contracts
 
 		Task<ILookup<Guid, Account>> DataLoaderAccountsByOwnerIdsAsync(IEnumerable<Guid> ownerIds);
 
-		void DeleteAccount(Account account);
+		void Delete(Account account);
 
 		Task<IEnumerable<Account>> GetAllAsync();
 

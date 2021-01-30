@@ -58,6 +58,21 @@
     }
   }
 }
+
+# Get one Account
+{
+  account(accountId: "0abd04c0ccc8414c88ace2317f35176d") {
+    id
+    type
+    description
+    ownerId
+    owner {
+      id
+      address
+      name
+    }
+  }
+}
 ````
 
 ## Mutations example
@@ -99,5 +114,47 @@ mutation ownerUpdate {
 # Delete an Owner
 mutation ownerDelete {
   ownerDelete(ownerId: "1d4a952648194b58a06e05e853b02e16")
+}
+
+# Create an Account
+mutation accountCreate {
+  accountCreate(data: { description: "New owner", type: INCOME, ownerId: "4c285165025a4f8c90360e95a26501e7" }) {
+    id
+    type
+    description
+    ownerId
+    owner {
+      id
+      address
+      name
+    }
+  }
+}
+
+# Update an Account
+mutation accountUpdate {
+  accountUpdate(
+    accountId: "2723abb858864882b9ce4d979237ca64"
+    data: {
+      description: "Update owner"
+      type: EXPENSE
+      ownerId: "4c285165025a4f8c90360e95a26501e7"
+    }
+  ) {
+    id
+    type
+    description
+    ownerId
+    owner {
+      id
+      address
+      name
+    }
+  }
+}
+
+# Delete an Account
+mutation accountDelete {
+  accountDelete(accountId: "2723abb858864882b9ce4d979237ca64")
 }
 ````

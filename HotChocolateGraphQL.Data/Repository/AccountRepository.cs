@@ -34,7 +34,7 @@ namespace HotChocolateGraphQL.Data.Repository
 			return accounts.ToLookup(x => x.OwnerId);
 		}
 
-		public void DeleteAccount(Account account)
+		public void Delete(Account account)
 		{
 			_context.Remove(account);
 			_context.SaveChanges();

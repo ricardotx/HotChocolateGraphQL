@@ -11,14 +11,14 @@ namespace HotChocolateGraphQL.Api.GraphQL.Source.Resolvers
 {
 	public class AccountResolver : IAccountResolver
 	{
-		private readonly IAccountService _accountService;
+		private readonly IAccountService accountService;
 
 		public AccountResolver(IAccountService accountService)
 		{
-			_accountService = accountService;
+			this.accountService = accountService;
 		}
 
-		public async Task<AccountApiModel> AccountAsync(Guid accountId) => await _accountService.GetAccountAsync(accountId);
+		public async Task<AccountApiModel> AccountAsync(Guid accountId) => await this.accountService.GetAccountAsync(accountId);
 
 		public async Task<AccountApiModel> AccountCreateAsync(AccountInput data)
 		{
@@ -29,12 +29,12 @@ namespace HotChocolateGraphQL.Api.GraphQL.Source.Resolvers
 				OwnerId = data.OwnerId,
 			};
 
-			return await _accountService.CreateAccountAsync(account);
+			return await this.accountService.CreateAccountAsync(account);
 		}
 
-		public async Task<string> AccountDeleteAsync(Guid accountId) => await _accountService.DeleteAccountAsync(accountId);
+		public async Task<string> AccountDeleteAsync(Guid accountId) => await this.accountService.DeleteAccountAsync(accountId);
 
-		public async Task<IEnumerable<AccountApiModel>> AccountsAsync() => await _accountService.GetAccountsAsync();
+		public async Task<IEnumerable<AccountApiModel>> AccountsAsync() => await this.accountService.GetAccountsAsync();
 
 		public async Task<AccountApiModel> AccountUpdateAsync(Guid accountId, AccountInput data)
 		{
@@ -45,7 +45,7 @@ namespace HotChocolateGraphQL.Api.GraphQL.Source.Resolvers
 				OwnerId = data.OwnerId,
 			};
 
-			return await _accountService.UpdateAccountAsync(accountId, account);
+			return await this.accountService.UpdateAccountAsync(accountId, account);
 		}
 	}
 }

@@ -11,14 +11,14 @@ namespace HotChocolateGraphQL.Api.Source.GraphQL.Resolvers
 {
 	public class OwnerResolver : IOwnerResolver
 	{
-		private readonly IOwnerService _ownerService;
+		private readonly IOwnerService ownerService;
 
 		public OwnerResolver(IOwnerService ownerService)
 		{
-			_ownerService = ownerService;
+			this.ownerService = ownerService;
 		}
 
-		public async Task<OwnerApiModel> OwnerAsync(Guid ownerId) => await _ownerService.GetOwnerAsync(ownerId);
+		public async Task<OwnerApiModel> OwnerAsync(Guid ownerId) => await this.ownerService.GetOwnerAsync(ownerId);
 
 		public async Task<OwnerApiModel> OwnerCreateAsync(OwnerInput data)
 		{
@@ -28,12 +28,12 @@ namespace HotChocolateGraphQL.Api.Source.GraphQL.Resolvers
 				Address = data.Address
 			};
 
-			return await _ownerService.CreateOwnerAsync(owner);
+			return await this.ownerService.CreateOwnerAsync(owner);
 		}
 
-		public async Task<string> OwnerDeleteAsync(Guid ownerId) => await _ownerService.DeleteOwnerAsync(ownerId);
+		public async Task<string> OwnerDeleteAsync(Guid ownerId) => await this.ownerService.DeleteOwnerAsync(ownerId);
 
-		public async Task<IEnumerable<OwnerApiModel>> OwnersAsync() => await _ownerService.GetOwnersAsync();
+		public async Task<IEnumerable<OwnerApiModel>> OwnersAsync() => await this.ownerService.GetOwnersAsync();
 
 		public async Task<OwnerApiModel> OwnerUpdateAsync(Guid ownerId, OwnerInput data)
 		{
@@ -43,7 +43,7 @@ namespace HotChocolateGraphQL.Api.Source.GraphQL.Resolvers
 				Address = data.Address
 			};
 
-			return await _ownerService.UpdateOwnerAsync(ownerId, owner);
+			return await this.ownerService.UpdateOwnerAsync(ownerId, owner);
 		}
 	}
 }

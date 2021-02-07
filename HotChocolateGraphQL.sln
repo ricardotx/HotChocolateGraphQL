@@ -14,7 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateGraphQL.Services", "HotChocolateGraphQL.Services\HotChocolateGraphQL.Services.csproj", "{CB024E43-2AC4-44F3-B6E6-B09C73D02172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolateGraphQL.Services", "HotChocolateGraphQL.Services\HotChocolateGraphQL.Services.csproj", "{CB024E43-2AC4-44F3-B6E6-B09C73D02172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotChocolateGraphQL.Core", "HotChocolateGraphQL.Core\HotChocolateGraphQL.Core.csproj", "{4C8283F4-37C7-47F0-A986-32DCFC3F7177}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{CB024E43-2AC4-44F3-B6E6-B09C73D02172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB024E43-2AC4-44F3-B6E6-B09C73D02172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB024E43-2AC4-44F3-B6E6-B09C73D02172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C8283F4-37C7-47F0-A986-32DCFC3F7177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C8283F4-37C7-47F0-A986-32DCFC3F7177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C8283F4-37C7-47F0-A986-32DCFC3F7177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C8283F4-37C7-47F0-A986-32DCFC3F7177}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

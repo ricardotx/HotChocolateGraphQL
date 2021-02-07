@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HotChocolateGraphQL.Core\HotChocolateGraphQL.Core.csproj" />
     <ProjectReference Include="..\HotChocolateGraphQL.Data\HotChocolateGraphQL.Data.csproj" />
   </ItemGroup>
 

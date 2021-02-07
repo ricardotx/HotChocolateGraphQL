@@ -15,8 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HotChocolateGraphQL.Core\HotChocolateGraphQL.Core.csproj" />
     <ProjectReference Include="..\HotChocolateGraphQL.Data\HotChocolateGraphQL.Data.csproj" />
     <ProjectReference Include="..\HotChocolateGraphQL.Services\HotChocolateGraphQL.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Source\Configurations\" />
+    <Folder Include="Source\Controllers\" />
   </ItemGroup>
 
 </Project>

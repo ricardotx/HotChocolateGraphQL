@@ -1,8 +1,8 @@
 using HotChocolate;
 
+using HotChocolateGraphQL.Api.Source.GraphQL.Types;
 using HotChocolateGraphQL.Core.Source.ApiModels;
-using HotChocolateGraphQL.Core.Source.GraphQL.Resolvers;
-using HotChocolateGraphQL.Core.Source.GraphQL.Types;
+using HotChocolateGraphQL.Core.Source.Resolvers;
 
 using System;
 using System.Threading.Tasks;
@@ -12,21 +12,37 @@ namespace HotChocolateGraphQL.Api.Source.GraphQL
 	public class Mutation
 	{
 		public async Task<AccountApiModel> AccountCreate(AccountInput data, [Service] IAccountResolver resolver)
-			=> await resolver.AccountCreateAsync(data);
+		{
+			var apiModel = data.ConvertFromGQL();
+			return await resolver.AccountCreateAsync(apiModel);
+		}
 
 		public async Task<string> AccountDelete(Guid accountId, [Service] IAccountResolver resolver)
-			=> await resolver.AccountDeleteAsync(accountId);
+		{
+			return await resolver.AccountDeleteAsync(accountId);
+		}
 
 		public async Task<AccountApiModel> AccountUpdate(AccountInput data, Guid accountId, [Service] IAccountResolver resolver)
-			=> await resolver.AccountUpdateAsync(accountId, data);
+		{
+			var apiModel = data.ConvertFromGQL();
+			return await resolver.AccountUpdateAsync(accountId, apiModel);
+		}
 
 		public async Task<OwnerApiModel> OwnerCreate(OwnerInput data, [Service] IOwnerResolver resolver)
-			=> await resolver.OwnerCreateAsync(data);
+		{
+			var apiModel = data.ConvertFromGQL();
+			return await resolver.OwnerCreateAsync(apiModel);
+		}
 
 		public async Task<string> OwnerDelete(Guid ownerId, [Service] IOwnerResolver resolver)
-			=> await resolver.OwnerDeleteAsync(ownerId);
+		{
+			return await resolver.OwnerDeleteAsync(ownerId);
+		}
 
 		public async Task<OwnerApiModel> OwnerUpdate(OwnerInput data, Guid ownerId, [Service] IOwnerResolver resolver)
-			=> await resolver.OwnerUpdateAsync(ownerId, data);
+		{
+			var apiModel = data.ConvertFromGQL();
+			return await resolver.OwnerUpdateAsync(ownerId, apiModel);
+		}
 	}
 }

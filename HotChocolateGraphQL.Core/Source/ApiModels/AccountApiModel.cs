@@ -23,8 +23,9 @@ namespace HotChocolateGraphQL.Core.Source.ApiModels
 			return new Account
 			{
 				Id = Id,
-				OwnerId = OwnerId,
-				Type = Type
+				Type = Type,
+				Description = Description,
+				OwnerId = OwnerId
 			};
 		}
 	}

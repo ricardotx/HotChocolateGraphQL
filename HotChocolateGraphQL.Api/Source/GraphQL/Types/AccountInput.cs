@@ -4,25 +4,30 @@ using HotChocolateGraphQL.Core.Source.Enums;
 
 using System;
 
-namespace HotChocolateGraphQL.Core.Source.DataModels
+namespace HotChocolateGraphQL.Api.Source.GraphQL.Types
 {
-	public class Account : IConvertModel<Account, AccountApiModel>
+	public class AccountInput : IConvertGQLType<AccountInput, AccountApiModel>
 	{
 		public string Description { get; set; }
-
-		public Guid Id { get; set; }
-
-		public Owner Owner { get; set; }
 
 		public Guid OwnerId { get; set; }
 
 		public AccountTypeEnum Type { get; set; }
 
-		public AccountApiModel Convert()
+		public AccountInput ConvertFromApiModel(AccountApiModel apiModel)
+		{
+			return new AccountInput
+			{
+				Type = apiModel.Type,
+				Description = apiModel.Description,
+				OwnerId = apiModel.OwnerId
+			};
+		}
+
+		public AccountApiModel ConvertFromGQL()
 		{
 			return new AccountApiModel
 			{
-				Id = Id,
 				Type = Type,
 				Description = Description,
 				OwnerId = OwnerId

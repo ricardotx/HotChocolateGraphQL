@@ -49,7 +49,6 @@ namespace HotChocolateGraphQL.Api
 			services.ConfigureDbContext(Configuration);
 			services.ConfigureRepositories();
 			services.ConfigureServices();
-			services.ConfigureGraphQLResolvers();
 			services.ConfigureGraphQL();
 
 			services.AddControllers();

@@ -1,6 +1,4 @@
 using HotChocolateGraphQL.Api.Source.GraphQL;
-using HotChocolateGraphQL.Api.Source.GraphQL.Resolvers;
-using HotChocolateGraphQL.Core.Source.Resolvers;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,13 +25,6 @@ namespace HotChocolateGraphQL.Api.Source.Configurations
 			//		.AddType<OwnerMutations>()
 			//	.AddType<AccountInput>()
 			//	.AddType<OwnerInput>();
-		}
-
-		public static void ConfigureGraphQLResolvers(this IServiceCollection services)
-		{
-			services
-				.AddScoped<IOwnerResolver, OwnerResolver>()
-				.AddScoped<IAccountResolver, AccountResolver>();
 		}
 	}
 }

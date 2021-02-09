@@ -1,7 +1,7 @@
 using HotChocolate;
 
 using HotChocolateGraphQL.Core.Source.ApiModels;
-using HotChocolateGraphQL.Core.Source.Resolvers;
+using HotChocolateGraphQL.Core.Source.Services;
 
 using System;
 using System.Collections.Generic;
@@ -11,24 +11,24 @@ namespace HotChocolateGraphQL.Api.Source.GraphQL
 {
 	public class Query
 	{
-		public async Task<AccountApiModel> Account(Guid accountId, [Service] IAccountResolver resolver)
+		public async Task<AccountApiModel> Account([Service] IAccountService accountService, Guid accountId)
 		{
-			return await resolver.AccountAsync(accountId);
+			return await accountService.GetAccountAsync(accountId);
 		}
 
-		public async Task<IEnumerable<AccountApiModel>> Accounts([Service] IAccountResolver resolver)
+		public async Task<IEnumerable<AccountApiModel>> Accounts([Service] IAccountService accountService)
 		{
-			return await resolver.AccountsAsync();
+			return await accountService.GetAccountsAsync();
 		}
 
-		public async Task<OwnerApiModel> Owner(Guid ownerId, [Service] IOwnerResolver resolver)
+		public async Task<OwnerApiModel> Owner([Service] IOwnerService ownerService, Guid ownerId)
 		{
-			return await resolver.OwnerAsync(ownerId);
+			return await ownerService.GetOwnerAsync(ownerId);
 		}
 
-		public async Task<IEnumerable<OwnerApiModel>> Owners([Service] IOwnerResolver resolver)
+		public async Task<IEnumerable<OwnerApiModel>> Owners([Service] IOwnerService ownerService)
 		{
-			return await resolver.OwnersAsync();
+			return await ownerService.GetOwnersAsync();
 		}
 	}
 }

@@ -1,4 +1,7 @@
-using HotChocolateGraphQL.Api.Source.GraphQL;
+using HotChocolateGraphQL.Api.Source.GraphQL.Account;
+using HotChocolateGraphQL.Api.Source.GraphQL.Account.Types;
+using HotChocolateGraphQL.Api.Source.GraphQL.Owner;
+using HotChocolateGraphQL.Api.Source.GraphQL.Owner.Types;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,21 +13,16 @@ namespace HotChocolateGraphQL.Api.Source.Configurations
 		{
 			services
 				.AddGraphQLServer()
-				.AddQueryType<Query>()
-				.AddMutationType<Mutation>();
-			//.AddType<AccountInput>()
-			//.AddType<OwnerInput>();
-
-			//services
-			//	.AddGraphQLServer()
-			//		.AddQueryType(d => d.Name("Query"))
-			//		.AddType<AccountQueries>()
-			//		.AddType<OwnerQueries>()
-			//	.AddMutationType(d => d.Name("Mutation"))
-			//		.AddType<AccountMutations>()
-			//		.AddType<OwnerMutations>()
-			//	.AddType<AccountInput>()
-			//	.AddType<OwnerInput>();
+				.AddQueryType(d => d.Name("Query"))
+					.AddTypeExtension<AccountQueries>()
+					.AddTypeExtension<OwnerQueries>()
+				.AddMutationType(d => d.Name("Mutation"))
+					.AddTypeExtension<AccountMutations>()
+					.AddTypeExtension<OwnerMutations>()
+				.AddType<AccountType>()
+				.AddType<AccountTypeEnumType>()
+				.AddType<AccountInputType>()
+				.AddType<OwnerInputType>();
 		}
 	}
 }

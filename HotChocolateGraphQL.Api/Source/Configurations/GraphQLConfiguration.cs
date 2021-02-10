@@ -19,8 +19,6 @@ namespace HotChocolateGraphQL.Api.Source.Configurations
 				.AddMutationType(d => d.Name("Mutation"))
 					.AddTypeExtension<AccountMutations>()
 					.AddTypeExtension<OwnerMutations>()
-				.AddType<AccountType>()
-				.AddType<AccountTypeEnumType>()
 				.AddType<AccountInputType>()
 				.AddType<OwnerInputType>();
 		}

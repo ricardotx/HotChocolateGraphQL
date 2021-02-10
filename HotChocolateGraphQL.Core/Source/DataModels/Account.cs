@@ -25,7 +25,8 @@ namespace HotChocolateGraphQL.Core.Source.DataModels
 				Id = Id,
 				Type = Type,
 				Description = Description,
-				OwnerId = OwnerId
+				OwnerId = OwnerId,
+				Owner = Owner?.Convert()
 			};
 		}
 	}

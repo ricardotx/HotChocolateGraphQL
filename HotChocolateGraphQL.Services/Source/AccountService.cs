@@ -1,5 +1,5 @@
 using HotChocolateGraphQL.Core.Source;
-using HotChocolateGraphQL.Core.Source.ApiModels;
+using HotChocolateGraphQL.Core.Source.Dtos;
 using HotChocolateGraphQL.Core.Source.Extensions;
 using HotChocolateGraphQL.Core.Source.Services;
 
@@ -18,7 +18,7 @@ namespace HotChocolateGraphQL.Services.Source
 			this.repo = repo;
 		}
 
-		public async Task<AccountApiModel> CreateAccountAsync(AccountApiModel account)
+		public async Task<AccountDto> CreateAccountAsync(AccountDto account)
 		{
 			var dataModel = account.Convert();
 			await this.repo.Accounts.AddAsync(dataModel);
@@ -34,19 +34,19 @@ namespace HotChocolateGraphQL.Services.Source
 			return $"The account with the id: {accountId} has been successfully deleted from db.";
 		}
 
-		public async Task<AccountApiModel> GetAccountAsync(Guid accountId)
+		public async Task<AccountDto> GetAccountAsync(Guid accountId)
 		{
 			var account = await this.repo.Accounts.GetByIdAsync(accountId);
 			return account.Convert();
 		}
 
-		public async Task<IEnumerable<AccountApiModel>> GetAccountsAsync()
+		public async Task<IEnumerable<AccountDto>> GetAccountsAsync()
 		{
 			var accounts = await this.repo.Accounts.GetAllAsync();
 			return accounts.ConvertAll();
 		}
 
-		public async Task<AccountApiModel> UpdateAccountAsync(Guid accountId, AccountApiModel account)
+		public async Task<AccountDto> UpdateAccountAsync(Guid accountId, AccountDto account)
 		{
 			var dbAccount = await this.repo.Accounts.GetByIdAsync(accountId);
 			dbAccount.Description = account.Description;

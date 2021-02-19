@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace HotChocolateGraphQL.Core.Source.ApiModels
+namespace HotChocolateGraphQL.Core.Source.Dtos
 {
-	public class AuthRequestBodyApiModel
+	public class AuthRequestBodyDto
 	{
 		[Required]
 		public string ClientId { get; set; }

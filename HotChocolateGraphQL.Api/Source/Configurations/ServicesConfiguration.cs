@@ -9,12 +9,11 @@ namespace HotChocolateGraphQL.Api.Source.Configurations
 	{
 		public static void ConfigureServices(this IServiceCollection services)
 		{
-			services
-				.AddScoped<IOwnerService, OwnerService>()
-				.AddScoped<IAccountService, AccountService>()
-				.AddScoped<IDataLoaderService, DataLoaderService>()
-				.AddScoped<IRoleService, RoleService>()
-				.AddScoped<IUserService, UserService>();
+			services.AddScoped<IOwnerService, OwnerService>();
+			services.AddScoped<IAccountService, AccountService>();
+			services.AddScoped<IDataLoaderService, DataLoaderService>();
+			services.AddScoped<IRoleService, RoleService>();
+			services.AddScoped<IUserService, UserService>();
 		}
 	}
 }

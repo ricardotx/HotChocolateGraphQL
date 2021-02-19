@@ -1,4 +1,4 @@
-using HotChocolateGraphQL.Core.Source.ApiModels;
+using HotChocolateGraphQL.Core.Source.Dtos;
 
 using System;
 using System.Collections.Generic;
@@ -9,8 +9,8 @@ namespace HotChocolateGraphQL.Core.Source.Services
 {
 	public interface IDataLoaderService
 	{
-		Task<ILookup<Guid, AccountApiModel>> AccountsByOwnerIdsAsync(IEnumerable<Guid> ownerIds);
+		Task<ILookup<Guid, AccountDto>> AccountsByOwnerIdsAsync(IEnumerable<Guid> ownerIds);
 
-		Task<IDictionary<Guid, OwnerApiModel>> OwnersByIdAsync(IEnumerable<Guid> ownerIds);
+		Task<IDictionary<Guid, OwnerDto>> OwnersByIdAsync(IEnumerable<Guid> ownerIds);
 	}
 }

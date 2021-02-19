@@ -1,5 +1,5 @@
 using HotChocolateGraphQL.Core.Source;
-using HotChocolateGraphQL.Core.Source.ApiModels;
+using HotChocolateGraphQL.Core.Source.Dtos;
 using HotChocolateGraphQL.Core.Source.Extensions;
 using HotChocolateGraphQL.Core.Source.Services;
 
@@ -18,7 +18,7 @@ namespace HotChocolateGraphQL.Services.Source
 			this.repo = repo;
 		}
 
-		public async Task<RoleApiModel> CreateAsync(RoleApiModel role)
+		public async Task<RoleDto> CreateAsync(RoleDto role)
 		{
 			var dataModel = role.Convert();
 			await this.repo.Roles.AddAsync(dataModel);
@@ -44,19 +44,19 @@ namespace HotChocolateGraphQL.Services.Source
 			return $"The role with the id: '{roleId}' has been successfully deleted from db.";
 		}
 
-		public async Task<IEnumerable<RoleApiModel>> GetAllAsync()
+		public async Task<IEnumerable<RoleDto>> GetAllAsync()
 		{
 			var dataModels = await this.repo.Roles.GetAllAsync();
 			return dataModels.ConvertAll();
 		}
 
-		public async Task<RoleApiModel> GetByIdAsync(Guid roleId)
+		public async Task<RoleDto> GetByIdAsync(Guid roleId)
 		{
 			var dataModel = await this.repo.Roles.GetByIdAsync(roleId);
 			return dataModel.Convert();
 		}
 
-		public async Task<RoleApiModel> UpdateAsync(RoleApiModel role)
+		public async Task<RoleDto> UpdateAsync(RoleDto role)
 		{
 			var dataModel = await this.repo.Roles.GetByIdAsync(role.Id);
 			dataModel.Name = role.Name;

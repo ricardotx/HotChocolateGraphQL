@@ -19,7 +19,7 @@ namespace HotChocolateGraphQL.Data.Source.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.2");
 
-            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.DataModels.Account", b =>
+            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.Entities.Account", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,7 +64,7 @@ namespace HotChocolateGraphQL.Data.Source.Migrations
                         });
                 });
 
-            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.DataModels.Owner", b =>
+            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.Entities.Owner", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,7 +96,7 @@ namespace HotChocolateGraphQL.Data.Source.Migrations
                         });
                 });
 
-            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.DataModels.Role", b =>
+            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.Entities.Role", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -132,7 +132,7 @@ namespace HotChocolateGraphQL.Data.Source.Migrations
                         });
                 });
 
-            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.DataModels.User", b =>
+            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.Entities.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -180,9 +180,9 @@ namespace HotChocolateGraphQL.Data.Source.Migrations
                         });
                 });
 
-            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.DataModels.Account", b =>
+            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.Entities.Account", b =>
                 {
-                    b.HasOne("HotChocolateGraphQL.Core.Source.DataModels.Owner", "Owner")
+                    b.HasOne("HotChocolateGraphQL.Core.Source.Entities.Owner", "Owner")
                         .WithMany("Accounts")
                         .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -191,9 +191,9 @@ namespace HotChocolateGraphQL.Data.Source.Migrations
                     b.Navigation("Owner");
                 });
 
-            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.DataModels.User", b =>
+            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.Entities.User", b =>
                 {
-                    b.HasOne("HotChocolateGraphQL.Core.Source.DataModels.Role", "Role")
+                    b.HasOne("HotChocolateGraphQL.Core.Source.Entities.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -202,12 +202,12 @@ namespace HotChocolateGraphQL.Data.Source.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.DataModels.Owner", b =>
+            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.Entities.Owner", b =>
                 {
                     b.Navigation("Accounts");
                 });
 
-            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.DataModels.Role", b =>
+            modelBuilder.Entity("HotChocolateGraphQL.Core.Source.Entities.Role", b =>
                 {
                     b.Navigation("Users");
                 });

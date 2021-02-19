@@ -1,4 +1,4 @@
-using HotChocolateGraphQL.Core.Source.DataModels;
+using HotChocolateGraphQL.Core.Source.Entities;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

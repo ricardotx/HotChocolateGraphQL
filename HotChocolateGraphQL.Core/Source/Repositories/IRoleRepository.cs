@@ -1,4 +1,4 @@
-using HotChocolateGraphQL.Core.Source.DataModels;
+using HotChocolateGraphQL.Core.Source.Entities;
 
 namespace HotChocolateGraphQL.Core.Source.Repositories
 {

@@ -1,12 +1,12 @@
 using HotChocolateGraphQL.Core.Source.Converters;
-using HotChocolateGraphQL.Core.Source.DataModels;
+using HotChocolateGraphQL.Core.Source.Entities;
 
 using System;
 using System.Collections.Generic;
 
-namespace HotChocolateGraphQL.Core.Source.ApiModels
+namespace HotChocolateGraphQL.Core.Source.Dtos
 {
-	public class RoleApiModel : IConvertModel<RoleApiModel, Role>
+	public class RoleDto : IConvertModel<RoleDto, Role>
 	{
 		public string Code { get; set; }
 
@@ -14,7 +14,7 @@ namespace HotChocolateGraphQL.Core.Source.ApiModels
 
 		public string Name { get; set; }
 
-		public ICollection<UserApiModel> Users { get; set; }
+		public ICollection<UserDto> Users { get; set; }
 
 		public Role Convert()
 		{

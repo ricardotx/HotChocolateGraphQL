@@ -1,5 +1,5 @@
 using HotChocolateGraphQL.Core.Source;
-using HotChocolateGraphQL.Core.Source.ApiModels;
+using HotChocolateGraphQL.Core.Source.Dtos;
 using HotChocolateGraphQL.Core.Source.Extensions;
 using HotChocolateGraphQL.Core.Source.Services;
 
@@ -19,13 +19,13 @@ namespace HotChocolateGraphQL.Services.Source
 			this.repo = repo;
 		}
 
-		public async Task<ILookup<Guid, AccountApiModel>> AccountsByOwnerIdsAsync(IEnumerable<Guid> ownerIds)
+		public async Task<ILookup<Guid, AccountDto>> AccountsByOwnerIdsAsync(IEnumerable<Guid> ownerIds)
 		{
 			var dataModels = await this.repo.Accounts.FindAllAsync(x => ownerIds.Contains(x.OwnerId));
 			return dataModels.ConvertAll().ToLookup(x => x.OwnerId);
 		}
 
-		public async Task<IDictionary<Guid, OwnerApiModel>> OwnersByIdAsync(IEnumerable<Guid> ownerIds)
+		public async Task<IDictionary<Guid, OwnerDto>> OwnersByIdAsync(IEnumerable<Guid> ownerIds)
 		{
 			var dataModels = await this.repo.Owners.FindAllAsync(x => ownerIds.Contains(x.Id));
 			return dataModels.ConvertAll().ToDictionary(x => x.Id);

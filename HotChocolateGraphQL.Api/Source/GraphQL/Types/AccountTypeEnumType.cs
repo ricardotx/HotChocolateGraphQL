@@ -2,7 +2,7 @@ using HotChocolate.Types;
 
 using HotChocolateGraphQL.Core.Source.Enums;
 
-namespace HotChocolateGraphQL.Api.Source.GraphQL.Account.Types
+namespace HotChocolateGraphQL.Api.Source.GraphQL.Types
 {
 	public class AccountTypeEnumType : EnumType<AccountTypeEnum>
 	{

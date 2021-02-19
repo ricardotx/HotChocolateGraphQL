@@ -1,4 +1,4 @@
-using HotChocolateGraphQL.Core.Source.DataModels;
+using HotChocolateGraphQL.Core.Source.Entities;
 using HotChocolateGraphQL.Data.Source.Configurations;
 using HotChocolateGraphQL.Data.Source.Seeds;
 

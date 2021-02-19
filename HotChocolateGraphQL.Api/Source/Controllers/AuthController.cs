@@ -1,4 +1,4 @@
-using HotChocolateGraphQL.Core.Source.ApiModels;
+using HotChocolateGraphQL.Core.Source.Dtos;
 using HotChocolateGraphQL.Core.Source.Enums;
 
 using Microsoft.AspNetCore.Mvc;
@@ -16,11 +16,11 @@ namespace HotChocolateGraphQL.Api.Source.Controllers
 		}
 
 		[HttpPost("grant")]
-		public IActionResult Grant([FromBody] AuthRequestBodyApiModel body)
+		public IActionResult Grant([FromBody] AuthRequestBodyDto body)
 		{
 			if (body.GrantType == GrantTypeEnum.password.ToString())
 			{
-				return Ok(new AuthResponseApiModel
+				return Ok(new AuthResponseDto
 				{
 					AccessToken = Guid.NewGuid().ToString(),
 					AccessTokenExpiracy = "",
@@ -31,7 +31,7 @@ namespace HotChocolateGraphQL.Api.Source.Controllers
 
 			if (body.GrantType == GrantTypeEnum.refresh_token.ToString())
 			{
-				return Ok(new AuthResponseApiModel
+				return Ok(new AuthResponseDto
 				{
 					AccessToken = Guid.NewGuid().ToString(),
 					AccessTokenExpiracy = "",

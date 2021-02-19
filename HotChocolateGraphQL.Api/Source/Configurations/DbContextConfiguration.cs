@@ -12,7 +12,7 @@ namespace HotChocolateGraphQL.Api.Source.Configurations
 		{
 			string connectionStr = configuration.GetConnectionString("mysqlConString");
 			services
-				.AddDbContext<StorageContext>(opt => opt.UseMySql(connectionStr, ServerVersion.AutoDetect(connectionStr)));
+				.AddPooledDbContextFactory<StorageContext>(opt => opt.UseMySql(connectionStr, ServerVersion.AutoDetect(connectionStr)));
 		}
 	}
 }

@@ -1,5 +1,5 @@
 using HotChocolateGraphQL.Core.Source;
-using HotChocolateGraphQL.Core.Source.ApiModels;
+using HotChocolateGraphQL.Core.Source.Dtos;
 using HotChocolateGraphQL.Core.Source.Extensions;
 using HotChocolateGraphQL.Core.Source.Services;
 
@@ -18,7 +18,7 @@ namespace HotChocolateGraphQL.Services.Source
 			this.repo = repo;
 		}
 
-		public async Task<UserApiModel> CreateAsync(UserApiModel user)
+		public async Task<UserDto> CreateAsync(UserDto user)
 		{
 			var dataModel = user.Convert();
 			await this.repo.Users.AddAsync(dataModel);
@@ -44,25 +44,25 @@ namespace HotChocolateGraphQL.Services.Source
 			return true;
 		}
 
-		public async Task<IEnumerable<UserApiModel>> GetAllAsync()
+		public async Task<IEnumerable<UserDto>> GetAllAsync()
 		{
 			var dataModels = await this.repo.Users.GetAllAsync();
 			return dataModels.ConvertAll();
 		}
 
-		public async Task<UserApiModel> GetByEmailAsync(string email)
+		public async Task<UserDto> GetByEmailAsync(string email)
 		{
 			var dataModel = await this.repo.Users.FindOneAsync(x => x.Email == email);
 			return dataModel.Convert();
 		}
 
-		public async Task<UserApiModel> GetByIdAsync(Guid userId)
+		public async Task<UserDto> GetByIdAsync(Guid userId)
 		{
 			var dataModel = await this.repo.Users.GetByIdAsync(userId);
 			return dataModel.Convert();
 		}
 
-		public async Task<UserApiModel> UpdateAsync(UserApiModel user)
+		public async Task<UserDto> UpdateAsync(UserDto user)
 		{
 			var dataModel = await this.repo.Users.GetByIdAsync(user.Id);
 			dataModel.Name = user.Name;

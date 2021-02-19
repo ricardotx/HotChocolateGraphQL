@@ -11,12 +11,11 @@ namespace HotChocolateGraphQL.Api.Source.Configurations
 	{
 		public static void ConfigureRepositories(this IServiceCollection services)
 		{
-			services
-				.AddScoped<IRepository, Repository>()
-				.AddScoped<IAccountRepository, AccountRepository>()
-				.AddScoped<IOwnerRepository, OwnerRepository>()
-				.AddScoped<IRoleRepository, RoleRepository>()
-				.AddScoped<IUserRepository, UserRepository>();
+			services.AddScoped<IRepository, Repository>();
+			services.AddScoped<IAccountRepository, AccountRepository>();
+			services.AddScoped<IOwnerRepository, OwnerRepository>();
+			services.AddScoped<IRoleRepository, RoleRepository>();
+			services.AddScoped<IUserRepository, UserRepository>();
 		}
 	}
 }

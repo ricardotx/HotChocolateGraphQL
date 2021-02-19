@@ -1,14 +1,14 @@
+using HotChocolateGraphQL.Core.Source.Dtos;
 using HotChocolateGraphQL.Core.Source.Converters;
-using HotChocolateGraphQL.Core.Source.DataModels;
 
 using System;
 using System.Collections.Generic;
 
-namespace HotChocolateGraphQL.Core.Source.ApiModels
+namespace HotChocolateGraphQL.Core.Source.Entities
 {
-	public class OwnerApiModel : IConvertModel<OwnerApiModel, Owner>
+	public class Owner : IConvertModel<Owner, OwnerDto>
 	{
-		public ICollection<AccountApiModel> Accounts { get; set; }
+		public ICollection<Account> Accounts { get; set; }
 
 		public string Address { get; set; }
 
@@ -16,9 +16,9 @@ namespace HotChocolateGraphQL.Core.Source.ApiModels
 
 		public string Name { get; set; }
 
-		public Owner Convert()
+		public OwnerDto Convert()
 		{
-			return new Owner
+			return new OwnerDto
 			{
 				Id = Id,
 				Name = Name,

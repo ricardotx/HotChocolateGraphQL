@@ -1,6 +1,6 @@
-namespace HotChocolateGraphQL.Core.Source.ApiModels
+namespace HotChocolateGraphQL.Core.Source.Dtos
 {
-	public class AuthResponseApiModel
+	public class AuthResponseDto
 	{
 		public string AccessToken { get; set; }
 		public string AccessTokenExpiracy { get; set; }

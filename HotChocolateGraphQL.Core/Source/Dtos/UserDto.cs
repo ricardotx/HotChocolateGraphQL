@@ -1,12 +1,12 @@
 using HotChocolateGraphQL.Core.Source.Converters;
-using HotChocolateGraphQL.Core.Source.DataModels;
+using HotChocolateGraphQL.Core.Source.Entities;
 using HotChocolateGraphQL.Core.Source.Enums;
 
 using System;
 
-namespace HotChocolateGraphQL.Core.Source.ApiModels
+namespace HotChocolateGraphQL.Core.Source.Dtos
 {
-	public class UserApiModel : IConvertModel<UserApiModel, User>
+	public class UserDto : IConvertModel<UserDto, User>
 	{
 		public string Email { get; set; }
 
@@ -16,7 +16,7 @@ namespace HotChocolateGraphQL.Core.Source.ApiModels
 
 		public string Password { get; set; }
 
-		public RoleApiModel Role { get; set; }
+		public RoleDto Role { get; set; }
 
 		public Guid RoleId { get; set; }
 
